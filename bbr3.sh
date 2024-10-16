@@ -9,17 +9,16 @@ NC='\033[0m' # No Color
 sudo apt update
 
 # 安装必备工具
-sudo apt install -y wget
+sudo apt install -y curl wget gnupg2 ca-certificates lsb-release
 
 # 导入 XanMod GPG 密钥
-wget -qO - https://dl.xanmod.org/archive.key | sudo gpg --dearmor -vo /usr/share/keyrings/xanmod-archive-keyring.gpg
+wget -qO - https://dl.xanmod.org/archive.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/xanmod-archive-keyring.gpg
 
 # 添加 XanMod 软件源
 echo 'deb [signed-by=/usr/share/keyrings/xanmod-archive-keyring.gpg] http://deb.xanmod.org releases main' | sudo tee /etc/apt/sources.list.d/xanmod-release.list
 
 # 更新软件包列表并安装 XanMod 内核
-sudo apt update
-sudo apt install linux-xanmod-x64v3
+sudo apt update && sudo apt install -y linux-xanmod-x64v3
 
 # 判断内核是否安装成功
 if [ $? -eq 0 ]; then
