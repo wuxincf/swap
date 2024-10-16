@@ -5,4 +5,4 @@ wget https://raw.githubusercontent.com/wuxincf/swap/refs/heads/main/swap.sh && b
 -------------------------------------------------------------------------------------------
 BBR3
 
-wget https://raw.githubusercontent.com/wuxincf/swap/refs/heads/main/swap.sh && sudo chmod +x bbr3.ssh && bash bbr3.sh
+wget https://raw.githubusercontent.com/wuxincf/swap/refs/heads/main/bbr3.sh && sudo chmod +x bbr3.ssh && bash bbr3.sh
